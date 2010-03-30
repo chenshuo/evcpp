@@ -7,9 +7,16 @@
 // Author: Shuo Chen (chenshuo at chenshuo dot com)
 //
 
-#include "evcpp.h"
+#ifndef EVCPP_CALLBACK_H
+#define EVCPP_CALLBACK_H
 
-int main()
+// this is an internal header file, you should include evcpp.h only.
+
+namespace evcpp
 {
-  evcpp::EventLoop loop;
+typedef boost::function<void()> Functor;
+typedef boost::function<void()> TimerCallback;
 }
+
+#endif  // EVCPP_CALLBACK_H
+
