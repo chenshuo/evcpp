@@ -1,5 +1,5 @@
 CXXFLAGS=$$(cat cxxflags)
-HEADERS=callback.h evcpp.h eventloop.h
+HEADERS=$(wildcard *.h)
 
 all: test
 
