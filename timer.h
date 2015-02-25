@@ -14,33 +14,33 @@
 
 namespace evcpp
 {
-  class Timestamp
-  {
-   public:
-    Timestamp()
+class Timestamp
+{
+ public:
+  Timestamp()
       : microseconds_(0)
-    {
-    }
-
-    Timestamp(int64_t microsecondsSinceEpoch)
-      : microseconds_(microsecondsSinceEpoch)
-    {
-    }
-
-    static Timestamp now()
-    {
-      struct timeval tv;
-      ::gettimeofday(&tv, NULL);
-      return Timestamp(tv.tv_sec*1000000 + tv.tv_usec);
-    }
-
-   private:
-    int64_t microseconds_;
-  };
-
-  class TimerId
   {
-  };
+  }
+
+  Timestamp(int64_t microsecondsSinceEpoch)
+      : microseconds_(microsecondsSinceEpoch)
+  {
+  }
+
+  static Timestamp now()
+  {
+    struct timeval tv;
+    ::gettimeofday(&tv, NULL);
+    return Timestamp(tv.tv_sec*1000000 + tv.tv_usec);
+  }
+
+ private:
+  int64_t microseconds_;
+};
+
+class TimerId
+{
+};
 }
 
 #endif  // EVCPP_TIMER_H

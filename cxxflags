@@ -1,1 +1,1 @@
--O0 -g -Wall -Wextra -Werror -levent_core -Wl,--rpath -Wl,/usr/local/lib
+-O0 -g -Wall -Wextra -Werror -Wno-unused-parameter -std=c++11

@@ -12,17 +12,33 @@
 
 #include <assert.h>
 
+#include <event2/bufferevent.h>
 #include <event2/event.h>
+#include <event2/listener.h>
 
-#include <pthread.h>
+// #include <pthread.h>
 #include <sys/time.h>
+#include <unistd.h>
 
-#include <boost/noncopyable.hpp>
-#include <boost/function.hpp>
+#include <functional>
+#include <memory>
 
+namespace evcpp
+{
+class noncopyable
+{
+ protected:
+  noncopyable() {}
+ private:
+  noncopyable(const noncopyable&);
+  void operator=(const noncopyable&);
+};
+}
 #include "callback.h"
 #include "timer.h"
 #include "eventloop.h"
+#include "connection.h"
+#include "listener.h"
 
 #endif  // EVCPP_EVCPP_H
 

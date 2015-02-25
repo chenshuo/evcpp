@@ -14,7 +14,8 @@
 
 namespace evcpp
 {
-class EventLoop : boost::noncopyable
+
+class EventLoop : noncopyable
 {
  public:
   EventLoop()

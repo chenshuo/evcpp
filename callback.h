@@ -14,8 +14,12 @@
 
 namespace evcpp
 {
-typedef boost::function<void()> Functor;
-typedef boost::function<void()> TimerCallback;
+typedef std::function<void()> Functor;
+typedef std::function<void()> TimerCallback;
+
+class TcpConnection;
+typedef std::shared_ptr<TcpConnection> TcpConnectionPtr;
+typedef std::function<void(TcpConnectionPtr)> NewConnectionCallback;
 }
 
 #endif  // EVCPP_CALLBACK_H
